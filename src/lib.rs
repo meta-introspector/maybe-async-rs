@@ -69,9 +69,9 @@
 //!     maybe_async = "0.2"
 //!     ```
 //!
-//!     Want to convert async code to sync? Add `maybe_async` to dependencies with
-//!     an `is_sync` feature gate. In this way, `maybe_async` is the same as
-//!     `must_be_sync`:
+//!     Want to convert async code to sync? Add `maybe_async` to dependencies
+//! with     an `is_sync` feature gate. In this way, `maybe_async` is the same
+//! as     `must_be_sync`:
 //!
 //!     ```toml
 //!     [dependencies]
@@ -81,22 +81,24 @@
 //!     There are three usage variants for `maybe_async` attribute usage:
 //!     - `#[maybe_async]` or `#[maybe_async(Send)]`
 //!
-//!        In this mode, `#[async_trait::async_trait]` is added to trait declarations and trait implementations
-//!        to support async fn in traits.
+//!        In this mode, `#[async_trait::async_trait]` is added to trait
+//! declarations and trait implementations        to support async fn in traits.
 //!
 //!     - `#[maybe_async(?Send)]`
 //!
 //!        Not all async traits need futures that are `dyn Future + Send`.
-//!        In this mode, `#[async_trait::async_trait(?Send)]` is added to trait declarations and trait implementations,
-//!        to avoid having "Send" and "Sync" bounds placed on the async trait
-//!        methods.
+//!        In this mode, `#[async_trait::async_trait(?Send)]` is added to trait
+//! declarations and trait implementations,        to avoid having "Send" and
+//! "Sync" bounds placed on the async trait        methods.
 //!
 //!     - `#[maybe_async(AFIT)]`
 //!
-//!        AFIT is acronym for **a**sync **f**unction **i**n **t**rait, stabilized from rust 1.74
+//!        AFIT is acronym for **a**sync **f**unction **i**n **t**rait,
+//! stabilized from rust 1.74
 //!
-//!     For compatibility reasons, the `async fn` in traits is supported via a verbose `AFIT` flag. This will become
-//!     the default mode for the next major release.
+//!     For compatibility reasons, the `async fn` in traits is supported via a
+//! verbose `AFIT` flag. This will become     the default mode for the next
+//! major release.
 //!
 //! - `must_be_async`
 //!
